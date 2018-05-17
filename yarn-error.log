@@ -1,8 +1,8 @@
 Arguments: 
-  D:\node\node.exe D:\userdata\ckang\Application Data\npm\node_modules\yarn\bin\yarn.js add webpack-dev-server --dev
+  D:\node\node.exe D:\userdata\ckang\Application Data\npm\node_modules\yarn\bin\yarn.js remove font-awesome
 
 PATH: 
-  C:\Users\ckang\bin;D:\Git\mingw64\bin;D:\Git\usr\local\bin;D:\Git\usr\bin;D:\Git\usr\bin;D:\Git\mingw64\bin;D:\Git\usr\bin;C:\Users\ckang\bin;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\RSA SecurID Token Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\Program Files (x86)\SafeCom\SafeComPrintClient;C:\Program Files (x86)\WebEx\Productivity Tools;C:\Program Files\nodejs;C:\Program Files\Git\cmd;C:\Program Files\Java\jdk1.8.0_91\bin;C:\Program Files\Java\jdk1.8.0_91\jre\bin;D:\userdata\ckang\Downloads\apache-maven-3.5.2-bin\apache-maven-3.5.2\bin;D:\node;D:\svn\bin;C:\Program Files (x86)\Sennheiser\SoftphoneSDK;C:\Program Files (x86)\CheckPoint\Endpoint Security\Endpoint Common\bin;C:\Users\ckang\AppData\Local\Programs\Python\Python36-32\Scripts;C:\Users\ckang\AppData\Local\Programs\Python\Python36-32;D:\userdata\ckang\Application Data\npm;D:\Git\usr\bin\vendor_perl;D:\Git\usr\bin\core_perl
+  C:\Users\ckang\bin;D:\Git\mingw64\bin;D:\Git\usr\local\bin;D:\Git\usr\bin;D:\Git\usr\bin;D:\Git\mingw64\bin;D:\Git\usr\bin;C:\Users\ckang\bin;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\RSA SecurID Token Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\Program Files (x86)\SafeCom\SafeComPrintClient;C:\Program Files (x86)\WebEx\Productivity Tools;C:\Program Files\nodejs;C:\Program Files\Git\cmd;D:\userdata\ckang\Downloads\apache-maven-3.5.2-bin\apache-maven-3.5.2\bin;D:\node;D:\svn\bin;C:\Program Files (x86)\Sennheiser\SoftphoneSDK;C:\Program Files (x86)\CheckPoint\Endpoint Security\Endpoint Common\bin;C:\Program Files\Java\jdk1.8.0_91\bin;C:\Users\ckang\AppData\Local\Programs\Python\Python36-32\Scripts;C:\Users\ckang\AppData\Local\Programs\Python\Python36-32;D:\userdata\ckang\Application Data\npm;D:\Git\usr\bin\vendor_perl;D:\Git\usr\bin\core_perl
 
 Yarn version: 
   1.6.0
@@ -14,10 +14,17 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: connect ETIMEDOUT 151.101.200.162:80
-      at Object.exports._errnoException (util.js:1020:11)
-      at exports._exceptionWithHostPort (util.js:1043:20)
-      at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1090:14)
+  Error: https://registry.yarnpkg.com/react-router-dom: tunneling socket could not be established, cause=connect ETIMEDOUT 10.144.1.10:8080
+      at ClientRequest.onError (D:\userdata\ckang\Application Data\npm\node_modules\yarn\lib\cli.js:147045:17)
+      at ClientRequest.g (events.js:292:16)
+      at emitOne (events.js:96:13)
+      at ClientRequest.emit (events.js:188:7)
+      at Socket.socketErrorListener (_http_client.js:310:9)
+      at emitOne (events.js:96:13)
+      at Socket.emit (events.js:188:7)
+      at emitErrorNT (net.js:1281:8)
+      at _combinedTickCallback (internal/process/next_tick.js:80:11)
+      at process._tickCallback (internal/process/next_tick.js:104:9)
 
 npm manifest: 
   {
@@ -25,6 +32,10 @@ npm manifest:
     "version": "1.0.0",
     "main": "index.js",
     "license": "MIT",
+    "scripts": {
+      "dev": "node_modules/.bin/webpack-dev-server",
+      "dist": "node_modules/.bin/webpack"
+    },
     "devDependencies": {
       "babel-core": "6.26.0",
       "babel-loader": "7.1.2",
@@ -38,12 +49,14 @@ npm manifest:
       "sass-loader": "6.0.6",
       "style-loader": "0.19.1",
       "url-loader": "0.6.2",
-      "webpack": "3.10.0"
+      "webpack": "^3.10.0",
+      "webpack-cli": "^2.1.2",
+      "webpack-dev-server": "^2.9.7"
     },
     "dependencies": {
-      "font-awesome": "^4.7.0",
       "react": "16.2.0",
-      "react-dom": "16.2.0"
+      "react-dom": "16.2.0",
+      "react-router-dom": "4.2.2"
     }
   }
 

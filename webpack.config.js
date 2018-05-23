@@ -15,7 +15,9 @@ module.exports = {
     alias:{
       //加别名，配置路径
         page     : path.resolve(__dirname, 'src/page'),
-        component: path.resolve(__dirname, 'src/component')
+        component: path.resolve(__dirname, 'src/component'),
+        util: path.resolve(__dirname, 'src/util'),
+        service: path.resolve(__dirname, 'src/service')
     }
   },
   module: {
@@ -89,6 +91,17 @@ module.exports = {
         //404找不到页面的时候也可跳转到下面的指定页面
         historyApiFallback: {
           index:'/dist/index.html'
+        },
+        proxy :{
+          '/manage':{
+              target: 'http://admintest.happymmall.com',
+              changeOrigin: true
+          },
+          '/user/logout.do':{
+              target: 'http://admintest.happymmall.com',
+              changeOrigin: true
+          }
         }
+
     }
 };
